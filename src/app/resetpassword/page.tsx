@@ -27,7 +27,7 @@ export default function ResetPasswordPage() {
       const response = await axios.put("api/users/resetpassword", updateObject);
       console.log("Password reset successfull", response.data);
       toast.success("Password reset successful");
-      router.push("/profile ");
+      router.push("/login ");
     } catch (error: any) {
       console.log("password reset  failed", error.message);
       toast.error(error.message);
