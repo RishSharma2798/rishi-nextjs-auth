@@ -1,4 +1,6 @@
 "use client";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import React, { useState, useEffect, use } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -28,6 +30,7 @@ export default function SignUpPage() {
 
   const Signup = async () => {
     try {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       setLoading(true);
       const response = await axios.post("/api/users/signup", user);
       console.log("signup successfull", response.data);

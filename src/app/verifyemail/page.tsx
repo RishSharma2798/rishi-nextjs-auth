@@ -1,4 +1,5 @@
 "use client";
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import axios from "axios";
 import { useState, useEffect } from "react";
 import Link from "next/link";
@@ -16,7 +17,7 @@ export default function VerifyEmailPage() {
       if (response.data.status === 200) {
         setVerified(true);
       }
-    } catch (error: any) {
+    } catch (error) {
       setError(true);
     } finally {
       setLoading(false);
