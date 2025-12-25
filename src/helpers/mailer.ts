@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import bcryptjs from "bcryptjs";
 import nodemailer from "nodemailer";
 import User from "@/models/userModel";
@@ -46,7 +47,7 @@ export const sendEmail = async ({ email, emailType, userId }: any) => {
         ? " to verify your email"
         : " to reset your password"
     }
-    or copy paste the link below in your browser. <br> ${process.env.domain}/${
+    or copy paste the link below in your browser. <br> ${process.env.DOMAIN}/${
         emailType === "VERIFY" ? "verifyemail" : "resetpassword"
       }?token=${hashedToken}
   </p>
